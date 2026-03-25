@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Lock, LogOut } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import EmptyState from './components/EmptyState';
 import MajorWorksForm from './components/MajorWorksForm';
@@ -32,13 +32,6 @@ export default function App() {
     }
 
     setAccessError('Incorrect password. Try again.');
-  };
-
-  const handleLogout = () => {
-    sessionStorage.removeItem(PROTOTYPE_SESSION_KEY);
-    setIsAuthenticated(false);
-    setAccessPassword('');
-    setAccessError('');
   };
 
   const handleCreateClick = () => {
@@ -264,12 +257,6 @@ export default function App() {
                     </span>
                   </div>
                 </div>
-              </div>
-              <div className="col-auto">
-                <button className="btn btn-outline-secondary d-flex align-items-center gap-2" onClick={handleLogout}>
-                  <LogOut size={16} />
-                  Logout
-                </button>
               </div>
             </div>
           </div>
